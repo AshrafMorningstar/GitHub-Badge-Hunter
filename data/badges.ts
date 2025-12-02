@@ -10,10 +10,10 @@ export const BADGES: Badge[] = [
     howToEarn: 'Have a repository that receives stars.',
     type: BadgeType.ACHIEVEMENT,
     tiers: [
-      { name: 'Base', requirement: '16 stars' },
-      { name: 'Bronze', requirement: '128 stars' },
-      { name: 'Silver', requirement: '512 stars' },
-      { name: 'Gold', requirement: '4096 stars' }
+      { name: 'Base', requirement: '16 stars', threshold: 16 },
+      { name: 'Bronze', requirement: '128 stars', threshold: 128 },
+      { name: 'Silver', requirement: '512 stars', threshold: 512 },
+      { name: 'Gold', requirement: '4096 stars', threshold: 4096 }
     ]
   },
   {
@@ -33,10 +33,10 @@ export const BADGES: Badge[] = [
     howToEarn: 'Co-author commits in a merged pull request.',
     type: BadgeType.ACHIEVEMENT,
     tiers: [
-      { name: 'Base', requirement: '10 points' },
-      { name: 'Bronze', requirement: '24 points' },
-      { name: 'Silver', requirement: '48 points' },
-      { name: 'Gold', requirement: '1024 points' }
+      { name: 'Base', requirement: '10 points', threshold: 10 },
+      { name: 'Bronze', requirement: '24 points', threshold: 24 },
+      { name: 'Silver', requirement: '48 points', threshold: 48 },
+      { name: 'Gold', requirement: '1024 points', threshold: 1024 }
     ]
   },
   {
@@ -47,10 +47,10 @@ export const BADGES: Badge[] = [
     howToEarn: 'Have pull requests merged.',
     type: BadgeType.ACHIEVEMENT,
     tiers: [
-      { name: 'Base', requirement: '2 PRs' },
-      { name: 'Bronze', requirement: '16 PRs' },
-      { name: 'Silver', requirement: '128 PRs' },
-      { name: 'Gold', requirement: '1024 PRs' }
+      { name: 'Base', requirement: '2 PRs', threshold: 2 },
+      { name: 'Bronze', requirement: '16 PRs', threshold: 16 },
+      { name: 'Silver', requirement: '128 PRs', threshold: 128 },
+      { name: 'Gold', requirement: '1024 PRs', threshold: 1024 }
     ]
   },
   {
@@ -61,10 +61,10 @@ export const BADGES: Badge[] = [
     howToEarn: 'Have your answers accepted in GitHub Discussions.',
     type: BadgeType.ACHIEVEMENT,
     tiers: [
-      { name: 'Base', requirement: '2 answers' },
-      { name: 'Bronze', requirement: '8 answers' },
-      { name: 'Silver', requirement: '16 answers' },
-      { name: 'Gold', requirement: '32 answers' }
+      { name: 'Base', requirement: '2 answers', threshold: 2 },
+      { name: 'Bronze', requirement: '8 answers', threshold: 8 },
+      { name: 'Silver', requirement: '16 answers', threshold: 16 },
+      { name: 'Gold', requirement: '32 answers', threshold: 32 }
     ]
   },
   {

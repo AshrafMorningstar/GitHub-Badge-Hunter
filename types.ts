@@ -7,6 +7,7 @@ export enum BadgeType {
 export interface BadgeTier {
   name: string;
   requirement: string;
+  threshold?: number;
 }
 
 export interface Badge {
@@ -43,4 +44,17 @@ export interface ChatMessage {
   role: 'user' | 'model';
   text: string;
   isThinking?: boolean;
+}
+
+export interface UserStats {
+  username: string;
+  avatarUrl: string;
+  name: string;
+  bio: string;
+  publicRepos: number;
+  totalStars: number;
+  maxStarCount: number;
+  bestRepoName: string;
+  mergedPRs: number;
+  acceptedAnswers: number;
 }

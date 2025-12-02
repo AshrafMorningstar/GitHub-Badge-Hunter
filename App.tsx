@@ -4,14 +4,16 @@ import { BadgeType } from './types';
 import BadgeCard from './components/BadgeCard';
 import GuideSection from './components/GuideSection';
 import ChatAssistant from './components/ChatAssistant';
-import { Github, Search, AlertCircle, CheckCircle2, HelpCircle, Trophy } from 'lucide-react';
+import ProfileChecker from './components/ProfileChecker';
+import { Github, Search, AlertCircle, CheckCircle2, HelpCircle, Trophy, UserCircle } from 'lucide-react';
 
 enum Tab {
   EARNABLE = 'earnable',
   HIGHLIGHTS = 'highlights',
   RETIRED = 'retired',
   GUIDES = 'guides',
-  FAQ = 'faq'
+  FAQ = 'faq',
+  PROFILE = 'profile'
 }
 
 const App: React.FC = () => {
@@ -77,6 +79,7 @@ const App: React.FC = () => {
               <TabButton id={Tab.RETIRED} label="Retired" icon={AlertCircle} />
               <TabButton id={Tab.GUIDES} label="Guides" icon={Search} />
               <TabButton id={Tab.FAQ} label="FAQ" icon={HelpCircle} />
+              <TabButton id={Tab.PROFILE} label="Check Profile" icon={UserCircle} />
             </div>
 
             {(activeTab === Tab.EARNABLE || activeTab === Tab.HIGHLIGHTS || activeTab === Tab.RETIRED) && (
@@ -122,6 +125,11 @@ const App: React.FC = () => {
               </div>
               <GuideSection />
             </div>
+          )}
+
+          {/* Profile Check View */}
+          {activeTab === Tab.PROFILE && (
+            <ProfileChecker />
           )}
 
           {/* FAQ View */}
