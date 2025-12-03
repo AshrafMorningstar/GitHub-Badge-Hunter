@@ -4,6 +4,22 @@ export enum BadgeType {
   RETIRED = 'Retired/Unreleased'
 }
 
+export enum BadgeRarity {
+  COMMON = 'Common',
+  RARE = 'Rare',
+  EPIC = 'Epic',
+  LEGENDARY = 'Legendary'
+}
+
+export enum BadgeCategory {
+  CONTRIBUTION = 'Contribution',
+  COMMUNITY = 'Community',
+  WORKFLOW = 'Workflow',
+  SECURITY = 'Security',
+  MEMBERSHIP = 'Membership',
+  SPECIAL = 'Special'
+}
+
 export interface BadgeTier {
   name: string;
   requirement: string;
@@ -17,6 +33,8 @@ export interface Badge {
   description: string;
   howToEarn: string;
   type: BadgeType;
+  rarity: BadgeRarity;
+  category: BadgeCategory;
   tiers?: BadgeTier[];
   notes?: string;
 }

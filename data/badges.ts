@@ -1,4 +1,4 @@
-import { Badge, BadgeType, Guide, FaqItem } from '../types';
+import { Badge, BadgeType, BadgeRarity, BadgeCategory, Guide, FaqItem } from '../types';
 
 export const BADGES: Badge[] = [
   // Earnable Achievements
@@ -9,6 +9,8 @@ export const BADGES: Badge[] = [
     description: 'Create a repository that captures the community\'s attention.',
     howToEarn: 'Have a repository that receives stars.',
     type: BadgeType.ACHIEVEMENT,
+    rarity: BadgeRarity.COMMON,
+    category: BadgeCategory.COMMUNITY,
     tiers: [
       { name: 'Base', requirement: '16 stars', threshold: 16 },
       { name: 'Bronze', requirement: '128 stars', threshold: 128 },
@@ -23,6 +25,8 @@ export const BADGES: Badge[] = [
     description: 'Fastest fingers in the west.',
     howToEarn: 'Close an issue or pull request within 5 minutes of opening it.',
     type: BadgeType.ACHIEVEMENT,
+    rarity: BadgeRarity.RARE,
+    category: BadgeCategory.WORKFLOW,
     notes: 'This is a one-time achievement.'
   },
   {
@@ -32,6 +36,8 @@ export const BADGES: Badge[] = [
     description: 'Collaborate with others on code.',
     howToEarn: 'Co-author commits in a merged pull request.',
     type: BadgeType.ACHIEVEMENT,
+    rarity: BadgeRarity.COMMON,
+    category: BadgeCategory.CONTRIBUTION,
     tiers: [
       { name: 'Base', requirement: '10 points', threshold: 10 },
       { name: 'Bronze', requirement: '24 points', threshold: 24 },
@@ -46,6 +52,8 @@ export const BADGES: Badge[] = [
     description: 'The lifeblood of open source.',
     howToEarn: 'Have pull requests merged.',
     type: BadgeType.ACHIEVEMENT,
+    rarity: BadgeRarity.COMMON,
+    category: BadgeCategory.CONTRIBUTION,
     tiers: [
       { name: 'Base', requirement: '2 PRs', threshold: 2 },
       { name: 'Bronze', requirement: '16 PRs', threshold: 16 },
@@ -60,6 +68,8 @@ export const BADGES: Badge[] = [
     description: 'Providing the answers everyone needs.',
     howToEarn: 'Have your answers accepted in GitHub Discussions.',
     type: BadgeType.ACHIEVEMENT,
+    rarity: BadgeRarity.RARE,
+    category: BadgeCategory.COMMUNITY,
     tiers: [
       { name: 'Base', requirement: '2 answers', threshold: 2 },
       { name: 'Bronze', requirement: '8 answers', threshold: 8 },
@@ -74,6 +84,8 @@ export const BADGES: Badge[] = [
     description: 'Living dangerously.',
     howToEarn: 'Merge a pull request without code review.',
     type: BadgeType.ACHIEVEMENT,
+    rarity: BadgeRarity.LEGENDARY,
+    category: BadgeCategory.WORKFLOW,
     notes: 'Requires a repository that enforces code review (Pro/Team feature) where you force merge as admin.'
   },
   {
@@ -82,7 +94,9 @@ export const BADGES: Badge[] = [
     emoji: '💖',
     description: 'Supporting the ecosystem.',
     howToEarn: 'Sponsor an open source contributor via GitHub Sponsors.',
-    type: BadgeType.ACHIEVEMENT
+    type: BadgeType.ACHIEVEMENT,
+    rarity: BadgeRarity.COMMON,
+    category: BadgeCategory.COMMUNITY
   },
   // Highlights
   {
@@ -91,7 +105,9 @@ export const BADGES: Badge[] = [
     emoji: '🔶',
     description: 'Member of GitHub Pro.',
     howToEarn: 'Subscribe to GitHub Pro plan.',
-    type: BadgeType.HIGHLIGHT
+    type: BadgeType.HIGHLIGHT,
+    rarity: BadgeRarity.COMMON,
+    category: BadgeCategory.MEMBERSHIP
   },
   {
     id: 'developer-program',
@@ -99,7 +115,9 @@ export const BADGES: Badge[] = [
     emoji: '🛠️',
     description: 'Registered developer program member.',
     howToEarn: 'Register for the GitHub Developer Program (free).',
-    type: BadgeType.HIGHLIGHT
+    type: BadgeType.HIGHLIGHT,
+    rarity: BadgeRarity.COMMON,
+    category: BadgeCategory.MEMBERSHIP
   },
   {
     id: 'security-bounty',
@@ -107,7 +125,9 @@ export const BADGES: Badge[] = [
     emoji: '🐛',
     description: 'Helping keep GitHub secure.',
     howToEarn: 'Find and report a valid security vulnerability in GitHub.',
-    type: BadgeType.HIGHLIGHT
+    type: BadgeType.HIGHLIGHT,
+    rarity: BadgeRarity.LEGENDARY,
+    category: BadgeCategory.SECURITY
   },
   // Retired/Unreleased
   {
@@ -117,6 +137,8 @@ export const BADGES: Badge[] = [
     description: 'Code preserved for future generations.',
     howToEarn: 'Contributed to specific repos before 02/02/2020.',
     type: BadgeType.RETIRED,
+    rarity: BadgeRarity.EPIC,
+    category: BadgeCategory.SPECIAL,
     notes: 'Retired / Legacy'
   },
   {
@@ -126,6 +148,8 @@ export const BADGES: Badge[] = [
     description: 'Code that flies on another planet.',
     howToEarn: 'Contributed to repositories used in the Mars 2020 Helicopter mission.',
     type: BadgeType.RETIRED,
+    rarity: BadgeRarity.LEGENDARY,
+    category: BadgeCategory.SPECIAL,
     notes: 'Retired / Legacy'
   },
   {
@@ -135,6 +159,8 @@ export const BADGES: Badge[] = [
     description: 'Unreleased achievement.',
     howToEarn: 'Not currently obtainable.',
     type: BadgeType.RETIRED,
+    rarity: BadgeRarity.RARE,
+    category: BadgeCategory.SPECIAL,
     notes: 'Unreleased'
   }
 ];

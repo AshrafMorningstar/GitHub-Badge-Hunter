@@ -14,10 +14,6 @@ export const sendMessageToGemini = async (
     throw new Error("API Key not found. Please configure process.env.API_KEY.");
   }
 
-  // Construct the chat history with system instruction
-  // Since we are using generateContentStream for a single turn in this simplified demo or maintaining chat state:
-  // We will use the chat API for maintaining context.
-  
   const chatHistory = history.map(h => ({
     role: h.role,
     parts: [{ text: h.text }]
@@ -45,4 +41,36 @@ export const sendMessageToGemini = async (
   }
 
   return streamGenerator();
+};
+
+export const generateBadgeImage = async (badgeName: string, emoji: string, description: string): Promise<string | null> => {
+  if (!ai) return null;
+
+  try {
+    const prompt = `Design a high-quality, 3D glossy circular badge icon for a GitHub achievement named "${badgeName}". 
+    The central element must be this emoji: ${emoji}. 
+    The theme is: ${description}. 
+    Style: premium gamified UI, shiny, vibrant colors, dark mode compatible, isolated on black background.`;
+
+    const response = await ai.models.generateContent({
+      model: 'gemini-2.5-flash-image',
+      contents: {
+        parts: [{ text: prompt }]
+      }
+    });
+
+    const candidates = response.candidates;
+    if (candidates && candidates[0] && candidates[0].content && candidates[0].content.parts) {
+      for (const part of candidates[0].content.parts) {
+        if (part.inlineData && part.inlineData.data) {
+          return `data:${part.inlineData.mimeType};base64,${part.inlineData.data}`;
+        }
+      }
+    }
+    return null;
+
+  } catch (error) {
+    console.error("Image generation failed", error);
+    return null;
+  }
 };

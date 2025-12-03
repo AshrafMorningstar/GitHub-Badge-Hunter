@@ -93,7 +93,7 @@ const ProfileChecker: React.FC = () => {
   return (
     <div className="max-w-2xl mx-auto space-y-8 animate-fade-in">
       <div className="text-center">
-        <h2 className="text-3xl font-bold text-white mb-3">Check Your Progress</h2>
+        <h2 className="text-3xl font-bold text-github-heading mb-3">Check Your Progress</h2>
         <p className="text-github-muted">
           Enter a real GitHub username to check live progress against badge requirements.
           <br />
@@ -130,7 +130,7 @@ const ProfileChecker: React.FC = () => {
       )}
 
       {stats && (
-        <div className="bg-github-card border border-github-border rounded-2xl p-6 shadow-xl animate-fade-in-up">
+        <div className="bg-github-card border border-github-border rounded-2xl p-6 shadow-xl animate-fade-in-up transition-colors duration-300">
           <div className="flex flex-col md:flex-row items-center gap-6 mb-8 border-b border-github-border pb-6">
             <a href={`https://github.com/${stats.username}`} target="_blank" rel="noreferrer" className="shrink-0 hover:opacity-80 transition-opacity">
               <img 
@@ -140,7 +140,7 @@ const ProfileChecker: React.FC = () => {
               />
             </a>
             <div className="text-center md:text-left">
-              <h3 className="text-2xl font-bold text-white flex items-center justify-center md:justify-start gap-2">
+              <h3 className="text-2xl font-bold text-github-heading flex items-center justify-center md:justify-start gap-2">
                 {stats.name}
                 <a href={`https://github.com/${stats.username}`} target="_blank" rel="noreferrer" className="text-github-muted hover:text-github-link">
                   <ExternalLink size={16} />
@@ -164,7 +164,7 @@ const ProfileChecker: React.FC = () => {
                    <GitPullRequest size={20} />
                  </div>
                  <div>
-                   <h4 className="font-bold text-white">Pull Shark</h4>
+                   <h4 className="font-bold text-github-heading">Pull Shark</h4>
                    <p className="text-xs text-github-muted">Merged Pull Requests: {stats.mergedPRs}</p>
                  </div>
                </div>
@@ -182,9 +182,9 @@ const ProfileChecker: React.FC = () => {
                    <Star size={20} />
                  </div>
                  <div>
-                   <h4 className="font-bold text-white">Starstruck</h4>
+                   <h4 className="font-bold text-github-heading">Starstruck</h4>
                    <p className="text-xs text-github-muted">
-                     Best Repo: {stats.bestRepoName ? <span className="text-white font-medium">{stats.bestRepoName}</span> : 'N/A'} ({stats.maxStarCount} stars)
+                     Best Repo: {stats.bestRepoName ? <span className="text-github-heading font-medium">{stats.bestRepoName}</span> : 'N/A'} ({stats.maxStarCount} stars)
                    </p>
                  </div>
                </div>
@@ -202,7 +202,7 @@ const ProfileChecker: React.FC = () => {
                    <MessageCircle size={20} />
                  </div>
                  <div>
-                   <h4 className="font-bold text-white">Galaxy Brain</h4>
+                   <h4 className="font-bold text-github-heading">Galaxy Brain</h4>
                    <p className="text-xs text-github-muted">Accepted Answers: {stats.acceptedAnswers}</p>
                  </div>
                </div>
@@ -215,7 +215,7 @@ const ProfileChecker: React.FC = () => {
 
             <div className="text-center pt-4 border-t border-github-border mt-4">
                <p className="text-xs text-github-muted">
-                 Note: <span className="text-white">Quickdraw</span>, <span className="text-white">Pair Extraordinaire</span>, and <span className="text-white">YOLO</span> cannot be accurately tracked via the public API without authentication.
+                 Note: <span className="text-github-heading">Quickdraw</span>, <span className="text-github-heading">Pair Extraordinaire</span>, and <span className="text-github-heading">YOLO</span> cannot be accurately tracked via the public API without authentication.
                </p>
             </div>
           </div>

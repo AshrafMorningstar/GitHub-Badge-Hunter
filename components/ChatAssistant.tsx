@@ -36,7 +36,6 @@ const ChatAssistant: React.FC = () => {
     setIsTyping(true);
 
     try {
-      // Temporary placeholder for streaming content
       const botMessageId = (Date.now() + 1).toString();
       setMessages(prev => [...prev, { id: botMessageId, role: 'model', text: '' }]);
 
@@ -69,35 +68,35 @@ const ChatAssistant: React.FC = () => {
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
       {isOpen && (
-        <div className="mb-4 w-80 md:w-96 h-[500px] bg-github-card border border-github-border rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-fade-in-up">
+        <div className="mb-4 w-80 md:w-96 h-[500px] bg-github-card/95 backdrop-blur-xl border border-github-border rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-fade-in-up">
           {/* Header */}
-          <div className="bg-github-dark p-4 border-b border-github-border flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-purple-500 to-blue-500 flex items-center justify-center">
+          <div className="bg-github-dark/50 p-4 border-b border-github-border flex items-center justify-between backdrop-blur-md">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-purple-500 to-blue-500 flex items-center justify-center shadow-lg shadow-purple-500/20">
                 <Sparkles size={16} className="text-white" />
               </div>
               <div>
-                <h3 className="font-bold text-github-text text-sm">Badge Assistant</h3>
-                <p className="text-xs text-github-muted">Powered by Gemini</p>
+                <h3 className="font-bold text-github-heading text-sm">Badge Assistant</h3>
+                <p className="text-xs text-github-muted">Always here to help</p>
               </div>
             </div>
-            <button onClick={() => setIsOpen(false)} className="text-github-muted hover:text-white">
+            <button onClick={() => setIsOpen(false)} className="text-github-muted hover:text-white transition-colors">
               <X size={20} />
             </button>
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-github-card">
+          <div className="flex-1 overflow-y-auto p-4 space-y-4">
             {messages.map((msg) => (
               <div
                 key={msg.id}
                 className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 <div
-                  className={`max-w-[85%] rounded-2xl px-4 py-2 text-sm ${
+                  className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-sm shadow-md ${
                     msg.role === 'user'
                       ? 'bg-github-link text-white rounded-br-none'
-                      : 'bg-github-border/50 text-github-text rounded-bl-none'
+                      : 'bg-github-border/30 text-github-text rounded-bl-none border border-github-border/50'
                   }`}
                 >
                   <ReactMarkdown className="prose prose-invert prose-sm max-w-none">
@@ -108,7 +107,7 @@ const ChatAssistant: React.FC = () => {
             ))}
             {isTyping && (
               <div className="flex justify-start">
-                <div className="bg-github-border/50 rounded-2xl rounded-bl-none px-4 py-3">
+                <div className="bg-github-border/30 rounded-2xl rounded-bl-none px-4 py-3">
                   <Loader2 size={16} className="animate-spin text-github-muted" />
                 </div>
               </div>
@@ -117,8 +116,8 @@ const ChatAssistant: React.FC = () => {
           </div>
 
           {/* Input */}
-          <div className="p-4 bg-github-dark border-t border-github-border">
-            <div className="flex items-center gap-2 bg-github-card border border-github-border rounded-full px-4 py-2 focus-within:border-github-link transition-colors">
+          <div className="p-4 bg-github-dark/50 border-t border-github-border backdrop-blur-md">
+            <div className="flex items-center gap-2 bg-github-card/50 border border-github-border rounded-full px-4 py-2 focus-within:border-github-link focus-within:ring-1 focus-within:ring-github-link transition-all shadow-inner">
               <input
                 type="text"
                 value={input}
@@ -143,7 +142,7 @@ const ChatAssistant: React.FC = () => {
         onClick={() => setIsOpen(!isOpen)}
         className={`
           w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-all duration-300
-          ${isOpen ? 'bg-github-muted text-github-dark rotate-90' : 'bg-gradient-to-r from-github-link to-purple-600 text-white hover:scale-105'}
+          ${isOpen ? 'bg-github-muted text-github-dark rotate-90 scale-90' : 'bg-gradient-to-r from-github-link to-purple-600 text-white hover:scale-110 hover:shadow-blue-500/30'}
         `}
       >
         {isOpen ? <X size={24} /> : <MessageSquare size={24} />}
