@@ -1,3 +1,11 @@
+/*
+ Copyright (c) 2026 Ashraf Morningstar
+ These are personal recreations of existing projects, developed by Ashraf Morningstar
+ for learning and skill development.
+ Original project concepts remain the intellectual property of their respective creators.
+ Repository: https://github.com/AshrafMorningstar
+*/
+
 import React, { useEffect } from 'react';
 import { Badge, BadgeRarity } from '../types';
 import { ArrowLeft, Award, Shield, CheckCircle, Target, Star, AlertTriangle, Image as ImageIcon, Loader2, Share2, Sparkles } from 'lucide-react';
